@@ -11,5 +11,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^4.8.1"
-  }
-}
+    },  // ここにカンマを記述
+    "engines" : {
+      "node": "14.19.1"  // ここに先ほど確認したバージョンを記述
+    }
+   }
