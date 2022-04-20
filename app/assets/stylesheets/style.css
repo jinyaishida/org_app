@@ -46,6 +46,29 @@ li {
   padding-right: 30px;
 }
 
+.login {
+  color: white;
+  text-decoration: none;
+}
+
+.sign-up {
+  color: white;
+  text-decoration: none;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.user-nickname {
+  color: white;
+  text-decoration: none;
+}
+
 /* first-viewクラスからbottom-contentクラスまでの要素の親要素 */
 .contents {
   background-color: white;
