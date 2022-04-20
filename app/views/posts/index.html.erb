@@ -1,2 +1,75 @@
-<h1>トップページ</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="style.css">
+    <title>GEAR LOG</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 class="title">GEAR LOG</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li>ログイン</li>
+          <li>新規登録</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="contents">
+      <div class="first-view">
+      <%= image_tag "HMG1.webp", class:"top-image" %>
+        <!-- 『トップ画像』を表示する -->
+      </div>
+      <div class="upper-content">
+        <h2 class="heading-name">新規投稿</h2>
+        <ul class="messages">
+          <li class="message">
+            <div class="message-date">2019/10/06</div>
+            <div>【新規投稿者様限定】<b>10％OFF</b>キャンペーン</div>
+          </li>
+          <li>
+            <%= image_tag "3400ice_hmg-incrediblehulk-24_2.jpeg", class:"stylist-image" %>
+            <div class="message-date">2019/10/06</div>
+
+        </ul><!-- 『新着情報』を表示する -->
+      </div>
+      <div class="middle-content">
+        <h2 class="heading-name">人気ランキング</h2>
+        <ul class="stylist-list">
+          <li>
+            <%= image_tag "hyperlite-mountain-gear-accessories-versa-white-29737456468013.webp", class:"stylist-image" %>
+            <h4 class="stylist-name">1位</h4>
+          </li>
+          <li>
+            <%= image_tag "ULTRALIGHT PYRAMID TENT.png", class:"stylist-image" %>
+            <h4 class="stylist-name">2位</h4>
+          </li>
+          <li>
+            <%= image_tag "71soQeVmvyL._AC_UY500_.jpg", class:"stylist-image" %>
+            <h4 class="stylist-name">3位</h4>
+          </li>
+        </ul>
+        <!-- 『スタイリスト紹介』を表示する -->
+      </div>
+      <div class="bottom-content">
+        <!-- 『フォーム』を表示する -->
+        <form class="contact-form">
+          <h2 class="heading-name">新規投稿</h2>
+          <input type="text" placeholder="title" class="small-field">
+          <input type="text" placeholder="brand" class="small-field">
+          <textarea placeholder="spec" class="large-field"></textarea>
+          <input type="submit" value="SEND" class="send">
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>
