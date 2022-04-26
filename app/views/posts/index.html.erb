@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="heading">
-        <h1 class="title">GEAR LOG</h1>
+      <%=link_to 'GEAR LOG', root_path, class:"title" %>
       </div>
       <div class="navbar">
           <ul class="nav-lists">
@@ -25,24 +25,55 @@
        <% end %>
     </header>
 
-    <div class="contents">
+ <div class="contents">
       <div class="first-view">
-      <%= image_tag "HMG1.webp", class:"top-image" %>
+       <%= image_tag "434B9327-4030-4869-A098-42624319B9B7.jpg", class:"top-image" %>
         <!-- 『トップ画像』を表示する -->
       </div>
+         <div class='search-bar-contents'>
+
+      <%= search_form_for Post.ransack(params[:q]), url: search_posts_path, html: {class: "search-form"} do |f| %>
+      <%= f.text_field :item_name, placeholder: '商品名から探す', class: 'search-box-top' %>
+      <%= f.label :submit, class: "search-button" do %>
+        <input type="submit" value="検索" class="search-button">
+        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
+    <% end %>
+   
+       <h3><%= link_to '詳細検索', search_posts_path, class:"search-link"%></h3>
+ </div>
       <div class="upper-content">
         <h2 class="heading-name">新規投稿</h2>
         <ul class="messages">
           <li class="message">
-            <div class="message-date">2019/10/06</div>
-            <div>【新規投稿者様限定】<b>10％OFF</b>キャンペーン</div>
+            <div class="message-date">2022/04/21</div>
+            <div>【初回投稿限定】<b>100ptプレゼント</b>キャンペーン</div>
           </li>
-          <li>
-            <%= image_tag "3400ice_hmg-incrediblehulk-24_2.jpeg", class:"stylist-image" %>
-            <div class="message-date">2019/10/06</div>
-
-        </ul><!-- 『新着情報』を表示する -->
-      </div>
+        </ul>
+     <ul class='item-lists'>
+        <% @posts.each do |post| %>
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag post.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= post.item_name %>
+          </h3>
+          <div class='etc'>
+            <span><%= post.etc %></span>
+          </div>
+          <div class='item-price'>
+            <span><%= post.price %>円<br></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+    </div>
+      <!-- 『新着情報』を表示する -->
       <div class="middle-content">
         <h2 class="heading-name">人気ランキング</h2>
         <ul class="stylist-list">
@@ -61,7 +92,10 @@
         </ul>
         <!-- 『スタイリスト紹介』を表示する -->
       </div>
+ 
       <div class="bottom-content">
+
+     
         <!-- 『フォーム』を表示する -->
         <form class="contact-form">
           <h2 class="heading-name">新規投稿</h2>
@@ -71,8 +105,11 @@
           <input type="submit" value="SEND" class="send">
         </form>
       </div>
-    </div>
-
+ </div>
+<%= link_to(new_post_path, class: 'purchase-btn') do %>
+ 
+  <%= image_tag 'icon_000680_256.png', size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
     <footer>
       <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
     </footer>

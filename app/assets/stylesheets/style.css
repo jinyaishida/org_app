@@ -16,7 +16,7 @@ ul,li {
 
 /* ヘッダー */
 header {
-  height: 50px;
+  height: 48px;
   background-color: #333;
   padding: 10px 0;
   display: flex;
@@ -28,6 +28,13 @@ header {
 .heading {
   width: 50%;
   margin-left: 30px;
+}
+
+.title {
+  font-size: 30px;
+  color: #f0f0f0;
+  text-decoration: none;
+  padding-top: 10px;
 }
 
 .navbar {
@@ -75,7 +82,7 @@ li {
 }
 
 .first-view{
-  height: 60vh;
+  height: 90vh;
 }
 
 .top-image {
@@ -85,8 +92,11 @@ li {
 
 /* 新着情報 */
 .upper-content{
-  height: 550px;
+  height: 100%;
   margin: 0 160px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .heading-name {
@@ -97,7 +107,7 @@ li {
 }
 
 .messages {
-  width: 50vw;
+  width: 100vw;
   margin: 0 auto;
 }
 
@@ -110,6 +120,46 @@ li {
 .message-date {
   padding-right: 40px;
 }
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name {
+  font-size: 2.5vh;
+}
+
+.item-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
 
 /* スタイリスト紹介 */
 .middle-content{
@@ -174,4 +224,25 @@ footer {
   background-color: black;
   text-align: center;
   color: #f0f0f0;
+}
+
+.search-bar-contents {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-box-top {
+  width:600px;
+  height:25px;
+}
+
+.search-link {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: blue;
+  font-size: 15px;
+  padding: 0px 0px 0px 20px;
 }

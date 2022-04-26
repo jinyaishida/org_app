@@ -17,22 +17,28 @@
 ### Association
 
 - has_many :posts
-- has_many :purchases
+- has_many :
 
 ## posts テーブル
 
-| Column             | Type       | Options                         |
+| Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | item_name          | string     | null: false                    |
-| description        | text       | null: false                    |
-| price              | integer    | null: false                    |
-| rating             | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| category_id        | integer    | null: false                    |
-| model_change       | text       | null: false                    |
 | brand_id           | integer    | null: false                    |
-| weight             | integer    | null: false                    |
+| category_id        | integer    | null: false                    |
 | purchase_date_id   | integer    | null: false                    |
+| price              | integer    |                                |
+| weight             | integer    |                                |
+| etc                | text       |                                |
+| good_point         | text       |                                |
+| bad_point          | text       |                                |
+| cost_rating        | float      | null: false                    |
+| function_rating    | float      | null: false                    |
+| weight_rating      | float      | null: false                    |
+| design_rating      | float      | null: false                    |
+| recommend_rating   | float      | null: false                    |
+| user               | references | null: false, foreign_key: true |
+
 
 
 ### Association
