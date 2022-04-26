@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <title>GEAR LOG</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+      <%=link_to 'GEAR LOG', root_path, class:"title" %>
+       
+      </div>
+      <div class="navbar">
+          <ul class="nav-lists">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    </ul>
+      </div>
+       <% end %>
+    </header>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%# 商品の概要 %>
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="name">
+      <%= @post.item_name %>
+    </h2>
+    <div class="post-img-content">
+      <%= image_tag @post.image, class:"post-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-brand">
+        <%= @post.brand.name %>
+      </span>
+      <span class="item-category">
+        <%= @post.category.name %>
+      </span>
+
+      <span class="item-price">
+        ¥ <%= @post.price %>
+      </span>
+    </div>
+    <div class="item-explain-box">
+      <span><%= @post.etc %></span>
+    </div>
+        <div class="item-explain-box">
+        <th class="detail-item">投稿者</th>
+      <span><%= @post.user.nickname %></span>
+    </div>
+
+  </table>
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+    <%= link_to "商品の編集", edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
+    <p class="or-text">or</p>
+    <%= button_to "削除", post_path(@post.id), method: :delete, class:"post-destroy" %>
+  <% else %>
+    <%= link_to "戻る", root_path, method: :get, class:"item-red-btn"%>
+    <% end %>
+
+  
+    <span>不適切な商品の通報</span>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+    </form>
+  </div>
+
+  <a href="#" class="another-item"><%= @post.category.name %>をもっと見る</a>
+
+</div>

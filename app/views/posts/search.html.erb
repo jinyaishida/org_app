@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="style.css">
+    <title>GEAR LOG</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+      <%=link_to 'GEAR LOG', root_path, class:"title" %>
+       
+      </div>
+      <div class="navbar">
+          <ul class="nav-lists">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    </ul>
+      </div>
+       <% end %>
+    </header>
+  <%# /商品の概要 %>
+
+<div class="search-contents">
+
+ <div class='middle-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :item_name, '商品名' %>
+      <br>
+      <%= f.text_field :item_name, placeholder: '商品名', value: params[:q]&.dig(:name) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :user_nickname_cont, '出品者名' %>
+      <br>
+      <%= f.text_field :user_nickname_cont, placeholder: '出品者名' %>
+    </div>   
+        <div class="search-field">
+      <%= f.label :category_id_eq, 'カテゴリ' %>
+      <br>
+      <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+      <div class="search-field">
+      <%= f.label :brand_id_eq, 'ブランド' %>
+      <br>
+      <%= f.collection_select(:brand_id_eq, Brand.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+        <div class="search-field">
+      <%= f.label :price_gteq, '価格'%>
+      <br>
+      <%= f.number_field :price_gteq %> 円以上
+      <br>
+      <%= f.number_field :price_lteq %> 円以下
+    </div>
+     <%= f.submit '検索', class: "search-btn"%>
+  <% end %>
+  <ul class='search-item-lists' id="detailed-search-result">
+    <% @posts.each do |post| %>
+      <li class='search-image-list'>
+        <div class="search-img">
+          <%= image_tag post.image, class: "search-img" %><br>
+          <%= post.item_name%><br>
+          <%= link_to '詳細', post_path(post.id)%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+ </div>
+</div>
+    <footer>
+      <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>
+

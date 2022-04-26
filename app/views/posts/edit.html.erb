@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <title>GEAR LOG</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+      <%=link_to 'GEAR LOG', root_path, class:"title" %>
+       
+      </div>
+      <div class="navbar">
+          <ul class="nav-lists">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    </ul>
+      </div>
+       <% end %>
+    </header>
+    
+  <div class="items-sell-contents">
+  <header class="items-sell-header">
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">新規投稿</h2>
+    <%= form_with model: @post, local: true do |f| %>
+
+    <%# 商品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /商品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :etc, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（オススメポイント、イマイチポイントなど）例）防水性や防風性は高いですが、生地がやや厚めなため、夏場は少し使いにくいです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">商品の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ブランド
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:brand_id, Brand.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# 配送について %>
+    <div class="items-detail">
+      <div class="weight-bold-text question-text">
+        <span>商品のレーティング</span>
+       
+      </div>
+      
+      <div class="form">
+      
+
+        
+        <div class="weight-bold-text">
+          オススメ度
+          <span class="indispensable">必須</span>
+        </div>
+                <div class="recommend-rating">
+
+          <input type="radio" name="recommend_rating" id="r1" value="5" >
+          <label for="r1"></label>
+
+          <input type="radio" name="recommend_rating" id="r2" value="4" >
+          <label for="r2"></label>
+
+           <input type="radio" name="recommend_rating" id="r3" value="3" >
+           <label for="r3"></label>
+
+           <input type="radio" name="recommend_rating" id="r4" value="2" >
+           <label for="r4"></label>
+
+           <input type="radio" name="recommend_rating" id="r5" value="1" >
+          <label for="r5"></label>
+
+        </div>
+      </div>
+    </div>
+    <%# /配送について %>
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>購入価格<br>(定価)</span>
+        
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）16800" %>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 注意書き %>
+    <div class="caution">
+      <p class="sentence">
+        <a href="#">禁止されている投稿内容、</a>
+        <a href="#">行為</a>
+        を必ずご確認ください。
+      </p>
+      <p class="sentence">
+        また、投稿をもちまして
+        <a href="#">利用規約</a>
+        に同意したことになります。
+      </p>
+    </div>
+    <%# /注意書き %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', post_path(@post.id), class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">GEAR LOG利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <p class="inc">
+      ©︎GEAR LOG,Inc.
+    </p>
+  </footer>
+</div>

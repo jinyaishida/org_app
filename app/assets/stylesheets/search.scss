@@ -1,0 +1,63 @@
+.search-contents {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  }
+
+.post_search {
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.search-field {
+  width: 100vw;
+  font-size: 16px;
+  padding: 50px 0px 20px 100px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn {
+  margin: 15px 0px 100px 100px;
+}
+
+.small-field {
+  margin: 0 auto 15px;
+}
+
+.posted-content {
+  width: 5vh;
+  height: 5vh;
+}
+
+.search-item-lists {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.search-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.search-button {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.search-btn {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
