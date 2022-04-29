@@ -15,7 +15,7 @@
       <div class="navbar">
           <ul class="nav-lists">
     <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
       <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -28,6 +28,9 @@
  <div class="contents">
       <div class="first-view">
        <%= image_tag "434B9327-4030-4869-A098-42624319B9B7.jpg", class:"top-image" %>
+       <%= image_tag "HMG1.jpeg", class:"top-image" %>
+       <%= image_tag "2021-Q4_BLOG-DFTW-DeYoung_3200x.webp", class:"top-image" %>
+       <%= image_tag "2022_04_hometop_01_01.jpeg", class:"top-image" %>
         <!-- 『トップ画像』を表示する -->
       </div>
          <div class='search-bar-contents'>
@@ -46,8 +49,8 @@
         <h2 class="heading-name">新規投稿</h2>
         <ul class="messages">
           <li class="message">
-            <div class="message-date">2022/04/21</div>
-            <div>【初回投稿限定】<b>100ptプレゼント</b>キャンペーン</div>
+           
+            
           </li>
         </ul>
      <ul class='item-lists'>
@@ -67,7 +70,16 @@
           <div class='item-price'>
             <span><%= post.price %>円<br></span>
           </div>
-        </div>
+          <div class='recommend-rating'>
+                <div class="star">
+            <% if post.recommend_rating? %>
+            <% for i in 1..post.recommend_rating do %>
+             ★
+            <% end %>
+            </div>
+            <% end %>
+           </div>
+         </div>
         <% end %>
       </li>
       <% end %>
@@ -90,7 +102,6 @@
             <h4 class="stylist-name">3位</h4>
           </li>
         </ul>
-        <!-- 『スタイリスト紹介』を表示する -->
       </div>
  
       <div class="bottom-content">
