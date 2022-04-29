@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path
+      redirect_to root_path
     else
       render :edit
     end

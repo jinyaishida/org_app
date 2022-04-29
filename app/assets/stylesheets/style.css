@@ -14,6 +14,10 @@ ul,li {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* ヘッダー */
 header {
   height: 48px;
@@ -81,13 +85,50 @@ li {
   background-color: white;
 }
 
+.user-contents{
+  background-color: white;
+  height: 100%;
+  margin: 0 160px;
+  padding: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .first-view{
+  position: relative;
   height: 90vh;
 }
 
 .top-image {
   height: 100%;
   width: 100%;
+  position: absolute;
+	opacity: 0;
+	animation: change-img-anim 16s infinite;
+}
+
+.top-image:nth-of-type(1) {
+	animation-delay: 0s;
+}
+.top-image:nth-of-type(2) {
+	animation-delay: 4s;
+}
+.top-image:nth-of-type(3) {
+	animation-delay: 8s;
+}
+
+.top-image:nth-of-type(4) {
+	animation-delay: 12s;
+}
+
+
+@keyframes change-img-anim {
+	0%{ opacity: 0;}
+	20%{ opacity: 1;}
+	30%{ opacity: 1;}
+	35%{ opacity: 0;}
+	100%{ opacity: 0;}
 }
 
 /* 新着情報 */
@@ -245,4 +286,31 @@ footer {
   color: blue;
   font-size: 15px;
   padding: 0px 0px 0px 20px;
+}
+
+.star-field{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+.star-field input[type='radio']{
+  display: none;
+}
+.star-field label{
+  font-size: 50px;
+  padding-right: 10px;
+  color: #ccc;
+  font-size: 30px;
+  cursor: pointer;
+} 
+.star-field label:hover,
+.star-field label:hover ~ label,
+.star-field input[type='radio']:checked ~ label{
+  color: rgb(255, 145, 0);
+}
+
+// 一覧表示ページ
+.star{
+font-size: 50px;
+color: rgb(255, 145, 0);
 }

@@ -15,7 +15,7 @@
       <div class="navbar">
           <ul class="nav-lists">
     <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
       <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -54,6 +54,7 @@
         <th class="detail-item">投稿者</th>
       <span><%= @post.user.nickname %></span>
     </div>
+    
 
   </table>
   <% if user_signed_in? && current_user.id == @post.user_id %>
