@@ -58,3 +58,4 @@ gem 'image_processing', '~> 1.2'
 gem "jquery-rails"
 gem 'active_hash'
 gem 'ransack'
+gem "aws-sdk-s3", require: false
