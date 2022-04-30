@@ -208,17 +208,17 @@ li {
   margin: 0 160px;
 }
 
-.stylist-list {
+.ranking-list {
   display: flex;
   justify-content: space-around;
   margin: 60px 0;
 }
 
-.stylist-image {
+.ranking-image {
   height: 300px;
 }
 
-.stylist-name {
+.ranking-name {
   font-size: 16px;
   text-align: center;
 }
