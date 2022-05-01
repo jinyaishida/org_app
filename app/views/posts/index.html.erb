@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="style.css">
     <title>GEAR LOG</title>
@@ -85,40 +85,7 @@
     </ul>
     </div>
 
-      <div class="middle-content">
-        <h2 class="heading-name">人気ランキング</h2>
-        <ul class="ranking-list">
-          <li>
-            <%= image_tag "hyperlite-mountain-gear-accessories-versa-white-29737456468013.webp", class:"ranking-image" %>
-            <h4 class="ranking-name">1位</h4>
-          </li>
-          <li>
-            <%= image_tag "ULTRALIGHT PYRAMID TENT.png", class:"ranking-image" %>
-            <h4 class="ranking-name">2位</h4>
-          </li>
-          <li>
-            <%= image_tag "71soQeVmvyL._AC_UY500_.jpg", class:"ranking-image" %>
-            <h4 class="ranking-name">3位</h4>
-          </li>
-        </ul>
-      </div>
- 
-      <div class="bottom-content">
-
-     
-        <form class="contact-form">
-          <h2 class="heading-name">新規投稿</h2>
-          <input type="text" placeholder="title" class="small-field">
-          <input type="text" placeholder="brand" class="small-field">
-          <textarea placeholder="spec" class="large-field"></textarea>
-          <input type="submit" value="SEND" class="send">
-        </form>
-      </div>
- </div>
-<%= link_to(new_post_path, class: 'purchase-btn') do %>
- 
-  <%= image_tag 'icon_000680_256.png', size: '185x50' ,class: "purchase-btn-icon" %>
-<% end %>
+      
     <footer>
       <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
     </footer>
