@@ -9,13 +9,24 @@ GEAR LOG
  * アピールポイント
    検索機能を充実させ、自分の買いたいもののレビューを探しやすくしました。
    星評価機能を実装し、その商品の評価が一目でわかるようにしました。
+   
+   
+   
 
 ![ec17eab69a9978d04b7a5fb462a7280e](https://user-images.githubusercontent.com/100757861/166178293-3e32b529-8974-4ae9-a4ac-b743d6387afa.jpeg)
 
+
 ![2267487f2340e584d62ee9ce012fa226](https://user-images.githubusercontent.com/100757861/166178448-0f823af1-f3ed-4a2b-b8d4-0282d6fd145d.png)
 
+
+## 使用技術
+Ruby 2.6.5p114
+Ruby on Rails 6.0.4.7
+MySQL2 (>= 0.4.4)
+
+
  
- # テーブル設計
+## テーブル設計
 
 ## users テーブル
 
