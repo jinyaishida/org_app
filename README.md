@@ -21,7 +21,9 @@ GEAR LOG
 
 ## 使用技術
 Ruby 2.6.5p114
+
 Ruby on Rails 6.0.4.7
+
 MySQL2 (>= 0.4.4)
 
 
