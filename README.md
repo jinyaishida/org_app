@@ -12,6 +12,7 @@ GEAR LOG
 
 ![ec17eab69a9978d04b7a5fb462a7280e](https://user-images.githubusercontent.com/100757861/166178293-3e32b529-8974-4ae9-a4ac-b743d6387afa.jpeg)
 
+![2267487f2340e584d62ee9ce012fa226](https://user-images.githubusercontent.com/100757861/166178448-0f823af1-f3ed-4a2b-b8d4-0282d6fd145d.png)
 
 
 タイトルと概要、URL
