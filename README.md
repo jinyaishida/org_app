@@ -3,7 +3,7 @@ GEAR LOG
 
 
 ## 概要
- * どういうサイトか
+ * サイト概要
  
    山道具とキャンプ道具にフォーカスしたレビュー投稿サイト
    
@@ -17,7 +17,10 @@ GEAR LOG
    
    星評価機能を実装し、その商品の評価が一目でわかるようにしました。
    
-   
+
+## URL
+https://org-app-37645.herokuapp.com/
+
    
 
 ![ec17eab69a9978d04b7a5fb462a7280e](https://user-images.githubusercontent.com/100757861/166178293-3e32b529-8974-4ae9-a4ac-b743d6387afa.jpeg)
@@ -56,7 +59,8 @@ MySQL2 (>= 0.4.4)
 ### Association
 
 - has_many :posts
-- has_many :
+- has_many :comments
+
 
 ## posts テーブル
 
@@ -83,40 +87,19 @@ MySQL2 (>= 0.4.4)
 ### Association
 
 - belongs_to :user
-- has_one :purchase
 - belongs_to_active_hash :category
-- belongs_to_active_hash :condition
-- belongs_to_active_hash :shipping_method
-- belongs_to_active_hash :prefectures
-- belongs_to_active_hash :shopping_date
-
-## shippings テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| postal_code      | string     | null: false                    |
-| shipping_area_id | integer    | null: false                    |
-| city             | string     | null: false                    |
-| street           | string     | null: false                    |
-| building         | string     |                                |
-| phone            | string     | null: false                    |
-| purchase         | references | null: false, foreign_key: true |
 
 
-### Association
 
-- belongs_to :purchase
-
-## purchases テーブル
+## comments テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
+| text        | string     | null: false                    |
 | user        | references | null: false, foreign_key: true |
-| item        | references | null: false, foreign_key: true |
+| post        | references | null: false, foreign_key: true |
+
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- has_one :shipping
-- has_one_active_hash :prefectures
