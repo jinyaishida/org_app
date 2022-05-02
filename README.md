@@ -10,7 +10,7 @@ GEAR LOG
 　　検索機能を充実させ、自分の買いたいもののレビューを探しやすくしました。
  星評価機能を実装し、その商品の評価が一目でわかるようにしました。
 
-
+![ec17eab69a9978d04b7a5fb462a7280e](https://user-images.githubusercontent.com/100757861/166178293-3e32b529-8974-4ae9-a4ac-b743d6387afa.jpeg)
 
 
 
