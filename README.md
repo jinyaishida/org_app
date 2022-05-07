@@ -17,7 +17,8 @@
 ### Association
 
 - has_many :posts
-- has_many :
+- has_many :comments
+
 
 ## posts テーブル
 
@@ -44,40 +45,19 @@
 ### Association
 
 - belongs_to :user
-- has_one :purchase
 - belongs_to_active_hash :category
-- belongs_to_active_hash :condition
-- belongs_to_active_hash :shipping_method
-- belongs_to_active_hash :prefectures
-- belongs_to_active_hash :shopping_date
-
-## shippings テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| postal_code      | string     | null: false                    |
-| shipping_area_id | integer    | null: false                    |
-| city             | string     | null: false                    |
-| street           | string     | null: false                    |
-| building         | string     |                                |
-| phone            | string     | null: false                    |
-| purchase         | references | null: false, foreign_key: true |
 
 
-### Association
 
-- belongs_to :purchase
-
-## purchases テーブル
+## comments テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
+| text        | string     | null: false                    |
 | user        | references | null: false, foreign_key: true |
-| item        | references | null: false, foreign_key: true |
+| post        | references | null: false, foreign_key: true |
+
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- has_one :shipping
-- has_one_active_hash :prefectures
