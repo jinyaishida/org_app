@@ -89,8 +89,6 @@ MySQL2 (>= 0.4.4)
 - belongs_to :user
 - belongs_to_active_hash :category
 
-
-
 ## comments テーブル
 
 | Column      | Type       | Options                        |

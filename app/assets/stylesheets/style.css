@@ -202,7 +202,7 @@ li {
 }
 
 
-/* スタイリスト紹介 */
+/* ランキングアイテム一覧 */
 .middle-content{
   height: 450px;
   margin: 0 160px;
@@ -314,3 +314,59 @@ footer {
 font-size: 20px;
 color: rgb(255, 145, 0);
 }
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .top-image {
+    height: 60vh;
+  }
+  .first-view {
+      position: relative;
+      height: 65vh;
+  }
+  .search-box-top {
+    width: 420px;
+    height: 20px;
+  }
+  .heading-name {
+    text-align: center;
+    border-bottom: 2px solid red;
+    width: 200px;
+    margin: 40px auto;
+   }
+  .upper-content {
+    margin: 0px 160px 50px 160px;
+ }
+
+ /* スマホ表示時 */
+ @media (max-width: 640px) {
+  .top-image {
+    height: 45vh;
+  }
+  .first-view {
+      position: relative;
+      height: 50vh;
+  }
+  .search-box-top {
+    width: 300px;
+    height: 20px;
+  }
+  .purchase-btn {
+    width: 40px;
+    background: #f8efef;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    padding: 7px;
+   }
+  .heading-name {
+    text-align: center;
+    border-bottom: 2px solid red;
+    width: 200px;
+    margin: 40px auto;
+   }
+  .upper-content {
+    margin: 0px 160px 50px 160px;
+ }
