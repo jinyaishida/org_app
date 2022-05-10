@@ -348,7 +348,7 @@ color: rgb(255, 145, 0);
       height: 50vh;
   }
   .search-box-top {
-    width: 300px;
+    width: 260px;
     height: 20px;
   }
   .purchase-btn {
@@ -369,5 +369,11 @@ color: rgb(255, 145, 0);
    }
   .upper-content {
     margin: 0px 160px 50px 160px;
+   }
+   a.login {
+    font-size: 10px;
+   }
+   a.sign-up {
+    font-size: 10px;
    }
   }
