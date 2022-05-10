@@ -335,7 +335,8 @@ color: rgb(255, 145, 0);
    }
   .upper-content {
     margin: 0px 160px 50px 160px;
- }
+   }
+}
 
  /* スマホ表示時 */
  @media (max-width: 640px) {
@@ -368,4 +369,5 @@ color: rgb(255, 145, 0);
    }
   .upper-content {
     margin: 0px 160px 50px 160px;
- }
+   }
+  }
