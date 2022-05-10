@@ -30,7 +30,6 @@ https://org-app-37645.herokuapp.com/
 
 
 
-
 ## 使用技術
 Ruby 2.6.5p114
 
