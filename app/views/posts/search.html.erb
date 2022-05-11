@@ -36,9 +36,9 @@
       <%= f.text_field :item_name, placeholder: '商品名', value: params[:q]&.dig(:name) %>
     </div>
     <div class="search-field">
-      <%= f.label :user_nickname_cont, '出品者名' %>
+      <%= f.label :user_nickname_cont, '投稿者名' %>
       <br>
-      <%= f.text_field :user_nickname_cont, placeholder: '出品者名' %>
+      <%= f.text_field :user_nickname_cont, placeholder: '投稿者名' %>
     </div>   
         <div class="search-field">
       <%= f.label :category_id_eq, 'カテゴリ' %>
