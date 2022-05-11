@@ -2,12 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>GEAR LOG</title>
   </head>
   <body>
+  <div class="wrap">
     <header>
       <div class="heading">
       <%=link_to 'GEAR LOG', root_path, class:"title" %>
@@ -95,6 +96,7 @@
     <footer>
       <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
     </footer>
+    </div>
   </body>
 </html>
 
