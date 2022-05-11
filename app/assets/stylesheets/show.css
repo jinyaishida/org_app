@@ -12,7 +12,6 @@
 .post-box {
   background-color: #FFF;
   width: 70vw;
-  min-width: 1200px;
 
   display: flex;
   flex-direction: column;
