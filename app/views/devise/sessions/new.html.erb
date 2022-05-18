@@ -1,10 +1,31 @@
 <!DOCTYPE HTML>
 <html>
+      <head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>GEAR LOG</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+      <%=link_to 'GEAR LOG', root_path, class:"title" %>
+      </div>
+      <div class="navbar">
+          <ul class="nav-lists">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    </ul>
+      </div>
+       <% end %>
+    </header>
     
-    <%= form_with model: @user, url: new_user_session_path, class: 'registration-main', local: true do |f| %>
+    <%= form_with model: @user, url: new_user_session_path, class: 'login-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -34,3 +55,11 @@
   </div>
 </div>
 <% end %>
+
+<footer class="items-sell-footer">
+
+    <footer>
+      <p>Copyright(C) Gear Log ALL RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>

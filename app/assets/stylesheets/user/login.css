@@ -18,3 +18,12 @@
   text-align: center;
   color: red;
 }
+
+.login-main {
+  width: 100%;
+  min-width: 800px;
+  height: 90vh;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
