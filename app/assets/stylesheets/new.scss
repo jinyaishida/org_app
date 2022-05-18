@@ -225,6 +225,7 @@
 
 .inc {
   font-size: 13px;
+  margin: 3vh 0;
 }
 
 @mixin star-rating( $filled-color: #F9BF3B, $empty-color: #444, $size: 20px, $width: 300px) {
