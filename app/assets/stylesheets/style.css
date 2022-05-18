@@ -265,6 +265,7 @@ footer {
   background-color: black;
   text-align: center;
   color: #f0f0f0;
+  width: 100vw;
 }
 
 .search-bar-contents {
