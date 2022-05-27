@@ -32,6 +32,7 @@ header {
 .heading {
   width: 50%;
   margin-left: 30px;
+  display: flex;
 }
 
 .title {
@@ -40,6 +41,7 @@ header {
   text-decoration: none;
   padding-top: 10px;
 }
+
 
 .navbar {
   width: 50%;
