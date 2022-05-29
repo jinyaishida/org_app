@@ -42,6 +42,9 @@ header {
   padding-top: 10px;
 }
 
+.explain {
+  margin: 25px 0px 20px 30px;
+}
 
 .navbar {
   width: 50%;
@@ -169,6 +172,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .item-lists>.list {
