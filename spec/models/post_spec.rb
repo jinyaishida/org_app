@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
     end
     context '新規投稿ができない時' do
       it 'item_nameが空では投稿できない' do
-        @post.title = ''
+        @post.item_name = ''
         @post.valid?
         expect(@post.errors.full_messages).to include("商品名を入力してください")
       end
@@ -32,13 +32,8 @@ RSpec.describe Post, type: :model do
         @post.valid?
         expect(@post.errors.full_messages).to include("Userを入力してください")
       end
-      it 'conditionが未選択項目（idの１）を選択すると投稿できない' do
-        @post.condition_id = 1
-        @post.valid?
-        expect(@post.errors.full_messages).to include("商品の状態を選択してください")
-      end
-      it 'descriptionが空では投稿できない' do
-        @post.description = ''
+      it 'etcが空では投稿できない' do
+        @post.etc = ''
         @post.valid?
         expect(@post.errors.full_messages).to include("商品の説明を入力してください")
       end
