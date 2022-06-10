@@ -8,16 +8,13 @@ ja:
         last_name: 姓
         last_name_kana: 姓カタカナ
         birthday: 生年月日 
-      item:
-        title: 商品名
+      post:
+        item_name: 商品名
         price: 価格
-        description: 商品の説明
+        etc: 商品の説明
         category_id: カテゴリー
-        shipping_area_id: 発送元の地域
-        shipping_date_id: 発送までの日数
-        shipping_method_id: 配送料の負担
+        brand_id: ブランド
         image: 画像
-        condition_id: 商品の状態
   activemodel:
     attributes:
       purchase_shipping:
