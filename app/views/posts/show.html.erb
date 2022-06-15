@@ -33,12 +33,12 @@
     <%# 商品の概要 %>
 <div class="post-show">
   <div class="post-box">
-    <h2 class="name">
-      <%= @post.item_name %>
-    </h2>
     <div class="post-img-content">
       <%= image_tag @post.image, class:"post-box-img" %>
     </div>
+    <h2 class="name">
+      <%= @post.item_name %>
+    </h2>
     <div class="item-price-box">
       <span class="item-brand">
         <%= @post.brand.name %>
@@ -46,10 +46,18 @@
       <span class="item-category">
         <%= @post.category.name %>
       </span>
-
       <span class="item-price">
         ¥ <%= @post.price %>
       </span>
+    </div>
+    <div class='recommend-rating'>
+                <div class="showstar">
+            <% if @post.recommend_rating? %>
+            <% for i in 1..@post.recommend_rating do %>
+             ★
+            <% end %>
+    </div>
+    <% end %>
     </div>
     <div class="item-explain-box">
       <span><%= @post.etc %></span>

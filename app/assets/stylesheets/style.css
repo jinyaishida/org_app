@@ -319,7 +319,16 @@ footer {
 .star{
 font-size: 20px;
 color: rgb(255, 145, 0);
+display: flex;
+justify-content:left;
 }
+
+.showstar{
+  font-size: 20px;
+  color: rgb(255, 145, 0);
+  display: flex;
+  justify-content: center;
+  }
 
  /* タブレット表示時 */
  @media (max-width: 1024px) {
