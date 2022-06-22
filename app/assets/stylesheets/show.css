@@ -1,7 +1,7 @@
 /* 商品の概要 */
 
 .post-show {
-  background-color: #f8f8f8;
+  background-color: white;
   width: 100vw;
   display: flex;
   flex-direction: column;
