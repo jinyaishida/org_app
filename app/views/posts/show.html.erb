@@ -50,6 +50,13 @@
         ¥ <%= @post.price %>
       </span>
     </div>
+    <div class="item-explain-box">
+      <span><%= @post.etc %></span>
+    </div>
+        <div class="item-explain-box">
+        <th class="detail-item">投稿者</th>
+      <span><%= @post.user.nickname %></span>
+    </div>
     <div class='recommend-rating'>
                 <div class="showstar">
             <% if @post.recommend_rating? %>
@@ -59,14 +66,6 @@
     </div>
     <% end %>
     </div>
-    <div class="item-explain-box">
-      <span><%= @post.etc %></span>
-    </div>
-        <div class="item-explain-box">
-        <th class="detail-item">投稿者</th>
-      <span><%= @post.user.nickname %></span>
-    </div>
-    
 
   </table>
   <% if user_signed_in? && current_user.id == @post.user_id %>
